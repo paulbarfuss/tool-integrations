@@ -16,7 +16,7 @@ def process(ctx, params):
             extra_vars.update({"ansible_python_interpreter": "/opt/app-root/bin/python"})
 
     passwords = dict(
-        vault_pass=params["vault_password"] if "vault_password" in params else ""
+        vault_pass=params["vault_password"] if "vault_password" in params else {}
     )
 
     r = ansible_runner.run(
